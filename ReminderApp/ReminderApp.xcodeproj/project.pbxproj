@@ -28,6 +28,10 @@
 		05D4C595264ED7A300124280 /* NewReminderVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C594264ED7A300124280 /* NewReminderVCExtensions.swift */; };
 		05D4C598264EEB6000124280 /* ReminderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C597264EEB6000124280 /* ReminderListVC.swift */; };
 		05D4C5BA264F01F100124280 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C5B9264F01F100124280 /* ReminderCell.swift */; };
+		05DB68F92650002400D8212E /* AddListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68F82650002400D8212E /* AddListVC.swift */; };
+		05DB68FB2650020200D8212E /* AddListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68FA2650020200D8212E /* AddListProtocol.swift */; };
+		05DB68FD26501C7400D8212E /* IconCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */; };
+		05DB68FF26501D0100D8212E /* AddListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		05D4C594264ED7A300124280 /* NewReminderVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderVCExtensions.swift; sourceTree = "<group>"; };
 		05D4C597264EEB6000124280 /* ReminderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListVC.swift; sourceTree = "<group>"; };
 		05D4C5B9264F01F100124280 /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		05DB68F82650002400D8212E /* AddListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListVC.swift; sourceTree = "<group>"; };
+		05DB68FA2650020200D8212E /* AddListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListProtocol.swift; sourceTree = "<group>"; };
+		05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListVCExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 		051549F1264D4D1A00D534D1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				05DB68F72650000E00D8212E /* AddListVC */,
 				05D4C596264EEB4300124280 /* ReminderListVC */,
 				051549FC264D698D00D534D1 /* NewReminderVC */,
 				051549F4264D4F8900D534D1 /* MainVC */,
@@ -161,6 +170,7 @@
 			children = (
 				05154A07264D798C00D534D1 /* NewReminderProtocol.swift */,
 				05D4C590264EBA8000124280 /* ShowAlertProtocol.swift */,
+				05DB68FA2650020200D8212E /* AddListProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -182,6 +192,16 @@
 				0545ECBA264FD7B30012AF0E /* ReminderListVCExtensions.swift */,
 			);
 			path = ReminderListVC;
+			sourceTree = "<group>";
+		};
+		05DB68F72650000E00D8212E /* AddListVC */ = {
+			isa = PBXGroup;
+			children = (
+				05DB68F82650002400D8212E /* AddListVC.swift */,
+				05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */,
+				05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */,
+			);
+			path = AddListVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +280,7 @@
 				05154A03264D6EC100D534D1 /* MyListTableViewCell.swift in Sources */,
 				051549FE264D69F900D534D1 /* NewReminderVC.swift in Sources */,
 				051549E1264D494600D534D1 /* MainVC.swift in Sources */,
+				05DB68F92650002400D8212E /* AddListVC.swift in Sources */,
 				05154A0F264D9B6B00D534D1 /* ReminderPriorityDelegate.swift in Sources */,
 				05154A0C264D7ED900D534D1 /* ReminderList.swift in Sources */,
 				051549FB264D610300D534D1 /* UITableView+EmptyListMessage.swift in Sources */,
@@ -267,11 +288,14 @@
 				05D4C593264ED68900124280 /* UITextView+CenterVertically.swift in Sources */,
 				051549DD264D494600D534D1 /* AppDelegate.swift in Sources */,
 				05D4C598264EEB6000124280 /* ReminderListVC.swift in Sources */,
+				05DB68FF26501D0100D8212E /* AddListVCExtensions.swift in Sources */,
 				05D4C591264EBA8000124280 /* ShowAlertProtocol.swift in Sources */,
+				05DB68FB2650020200D8212E /* AddListProtocol.swift in Sources */,
 				05154A0A264D7E2B00D534D1 /* Reminder.swift in Sources */,
 				05154A08264D798C00D534D1 /* NewReminderProtocol.swift in Sources */,
 				05D4C58F264EAB2500124280 /* ReminderListDelegate.swift in Sources */,
 				051549DF264D494600D534D1 /* SceneDelegate.swift in Sources */,
+				05DB68FD26501C7400D8212E /* IconCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

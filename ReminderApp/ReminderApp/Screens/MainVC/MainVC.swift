@@ -17,6 +17,7 @@ extension MainVC {
         static let myListTableViewCellID = "myListTableViewCell"
         static let myListTableViewCellName = "MyListTableViewCell"
         static let reminderListSegueID = "reminderListSegueID"
+        static let addListSegueID = "addListSegueID"
         static let allListName = "All"
         static let flaggedListName = "Flagged"
         static let flagIcon = "flag.circle.fill"
@@ -29,24 +30,18 @@ final class MainVC: UIViewController {
     @IBOutlet weak var allSection: UIView!
     @IBOutlet weak var flaggedSection: UIView!
     @IBOutlet weak var myListTableView: UITableView!
+    @IBOutlet weak var allCountLabel: UILabel!
+    @IBOutlet weak var flaggedCountLabel: UILabel!
 
     var reminderLists: [ReminderList] = [
-        ReminderList(name: "Reminder", icon: "flag.circle.fill", iconColor: .orange, reminders: []),
-        ReminderList(name: "Anımsatıcılar", icon: "line.horizontal.3.circle.fill", iconColor: .red, reminders: []),
-
-        ReminderList(name: "Okul", icon: "line.horizontal.2.circle.fill", iconColor: .blue, reminders: [
-            Reminder(title: "Okul stuff", notes: "Uzun ", listName: "Okul", isFlag: true, priority: .High),
-            Reminder(title: "Okul", notes: "Uzun bir string Uzun bir string Uzun bir string Uzun bir string Uzun bir string Uzun bir string", listName: "Okul", isFlag: true, priority: .Medium)
-
-            ])
-    ]
+        ReminderList(name: "Reminder", icon: "flag.circle.fill", iconColor: .orange, reminders: [Reminder(title: "Denem", notes: "Not Bölümü", listName: "Reminder", isFlag: true, priority: .High)])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUISettings()
         addRecognizerForSection()
-//        myListTableView.setEmptyMessage(message: "No Reminder !")
-//        myListTableView.register(UINib(nibName: Constant.myListTableViewCellName, bundle: nil), forCellReuseIdentifier: Constant.myListTableViewCellID)
+        allCountLabel.text = "\(filterAllList().count)"
+        flaggedCountLabel.text = "\(filterFlaggedList().count)"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +58,6 @@ final class MainVC: UIViewController {
         allSection.layer.cornerRadius = Constant.cornerRadius
         flaggedSection.layer.cornerRadius = Constant.cornerRadius
         myListTableView.layer.cornerRadius = Constant.cornerRadius
-
     }
 
     func addRecognizerForSection() {
@@ -75,11 +69,20 @@ final class MainVC: UIViewController {
     }
 
     @objc func allSectionAction(sender: UITapGestureRecognizer) {
-        let listInfo: ListInfo = (reminderList: reminderLists, color: UIColor(ciColor: .gray), name: Constant.allListName)
+        let allList = filterAllList().list
+        let listInfo: ListInfo = (reminderList: allList, color: UIColor(ciColor: .gray), name: Constant.allListName)
         performSegue(withIdentifier: Constant.reminderListSegueID, sender: listInfo)
     }
 
     @objc func flaggedSectionAction(sender: UITapGestureRecognizer) {
+        let flaggedList = filterFlaggedList().list
+        let listInfo: ListInfo = (reminderList: flaggedList, color: .orange, name: Constant.flaggedListName)
+        performSegue(withIdentifier: Constant.reminderListSegueID, sender: listInfo)
+    }
+
+    // Calculate All and Flagged list. Show count on sections
+    func filterFlaggedList() -> (list: [ReminderList], count: Int) {
+        var count = 0
         var flaggedList = ReminderList(name: Constant.flaggedListName, icon: Constant.flagIcon, iconColor: .orange, reminders: [])
 
         let flaggeds = reminderLists.flatMap {
@@ -90,8 +93,23 @@ final class MainVC: UIViewController {
             flaggedList.reminders.append(reminder)
         }
 
-        let listInfo: ListInfo = (reminderList: [flaggedList], color: .orange, name: Constant.flaggedListName)
-        performSegue(withIdentifier: Constant.reminderListSegueID, sender: listInfo)
+        for reminderlist in [flaggedList] {
+            for _ in reminderlist.reminders {
+                count += 1
+            }
+        }
+        return (list: [flaggedList], count: count)
+    }
+
+    func filterAllList() -> (list: [ReminderList], count: Int) {
+        var count = 0
+
+        for reminderlist in reminderLists {
+            for _ in reminderlist.reminders {
+                count += 1
+            }
+        }
+        return (list: reminderLists, count: count)
     }
 
     @IBAction func newReminderAction(_ sender: Any) {

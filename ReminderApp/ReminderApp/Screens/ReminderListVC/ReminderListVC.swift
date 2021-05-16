@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension ReminderListVC {
+    enum Constant {
+        static let reminderCellID = "reminderCellID"
+    }
+}
+
 class ReminderListVC: UIViewController {
 
     var reminderList: [ReminderList] = []

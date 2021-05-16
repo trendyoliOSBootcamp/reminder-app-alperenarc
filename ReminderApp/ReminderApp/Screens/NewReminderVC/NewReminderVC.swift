@@ -44,7 +44,7 @@ final class NewReminderVC: UIViewController, ShowAlert {
 
     var reminderPriorityDelegate = ReminderPriorityDelegate()
     lazy var reminderListDelegate = ReminderListDelegate(reminderLists: reminderLists ?? [])
-    var delegate: NewReminderProtocol? = nil
+    var delegate: NewReminderProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,22 +62,16 @@ final class NewReminderVC: UIViewController, ShowAlert {
         prioritySection.layer.cornerRadius = Constant.cornerRadius
 
         listNameLabel.text = reminderLists?[0].name
-
         titleTxtField.centerVertically()
-
 
         titleTxtField.delegate = self
         notesTxtField.delegate = self
-
-        titleTxtField.text = Constant.titlePlaceHolder
-        titleTxtField.textColor = UIColor.lightGray
-
-        notesTxtField.text = Constant.notesPlaceHolder
-        notesTxtField.textColor = UIColor.lightGray
     }
 
     @IBAction func sendData(_ sender: Any) {
+
         guard let title = titleTxtField.text, !title.isEmpty, let notes = notesTxtField.text, !notes.isEmpty else {
+            
             showError(alertTitle: Constant.blankAlertTitle, alertActionTitle: Constant.alertAction, alertMessage: Constant.blankAlertMessage, ownerVC: self)
             return
         }

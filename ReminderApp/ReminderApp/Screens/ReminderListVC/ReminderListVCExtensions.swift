@@ -8,11 +8,12 @@
 import UIKit
 
 extension ReminderListVC: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         allReminders.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = reminderListTableView.dequeueReusableCell(withIdentifier: "reminderCellID") as! ReminderCell
+        let cell = reminderListTableView.dequeueReusableCell(withIdentifier: Constant.reminderCellID) as! ReminderCell
 
         cell.exclamationLbl.text = priorityExclamationString(priority: allReminders[indexPath.row].priority)
         cell.titleLabel.text = allReminders[indexPath.row].notes
