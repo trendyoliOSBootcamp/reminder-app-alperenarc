@@ -20,7 +20,11 @@ class ReminderListVC: UIViewController {
     var listColor: UIColor?
     var allReminders: [Reminder] = []
 
+    var selectedReminders: [Reminder] = []
+
     @IBOutlet weak var reminderListTableView: UITableView!
+
+    var delegate: ReminderProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()

@@ -12,5 +12,6 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var exclamationLbl: UILabel!
     @IBOutlet weak var flagIcon: UIImageView!
+    @IBOutlet weak var selectIcon: UIImageView!
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension MainVC: UITableViewDataSource, UITableViewDelegate, NewReminderProtocol, AddListProtocol {
+extension MainVC: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, ReminderProtocol, IsTableViewEmptyProtocol, UISearchResultsUpdating {
 
     func createNewReminder(reminder: Reminder) {
         let newReminderLists = reminderLists.map { reminderList -> ReminderList in
@@ -33,8 +33,38 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate, NewReminderProtoco
         myListTableView.reloadData()
     }
 
+    func deleteReminder(reminder: Reminder) {
+
+        for reminderListIndex in 0..<reminderLists.count {
+            let reminderList = reminderLists[reminderListIndex].reminders
+            for reminderIndex in 0..<reminderList.count {
+                if reminderList[reminderIndex] == reminder {
+                    reminderLists[reminderListIndex].reminders.remove(at: reminderIndex)
+                }
+            }
+        }
+        allCountLabel.text = "\(filterAllList().count)"
+        flaggedCountLabel.text = "\(filterFlaggedList().count)"
+        myListTableView.reloadData()
+    }
+
+    func switchFlagStatus(reminder: Reminder) {
+        for reminderListIndex in 0..<reminderLists.count {
+            let reminderList = reminderLists[reminderListIndex].reminders
+            for reminderIndex in 0..<reminderList.count {
+                if reminderList[reminderIndex] == reminder {
+                    let isFlag = reminderLists[reminderListIndex].reminders[reminderIndex].isFlag
+                    reminderLists[reminderListIndex].reminders[reminderIndex].isFlag = !isFlag
+                }
+            }
+        }
+        flaggedCountLabel.text = "\(filterFlaggedList().count)"
+        myListTableView.reloadData()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        reminderLists.count
+        tableViewIsEmpty(tableView: myListTableView, list: reminderLists, message: "No Reminder List !")
+        return reminderLists.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +77,38 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate, NewReminderProtoco
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO
+
+        let reminderList = reminderLists[indexPath.row]
+
+        let listInfo: ListInfo = (reminderList: [reminderList], color: reminderList.iconColor, name: reminderList.name)
+        performSegue(withIdentifier: Constant.reminderListSegueID, sender: listInfo)
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+
+        guard let searchText = searchController.searchBar.text else { return }
+
+        if let vc = searchController.searchResultsController as? SearchResultVC {
+            vc.searchText = searchText
+            vc.reminderList = search(searchText: searchText)
+            vc.searchTableView.reloadData()
+            vc.delegate = self
+        }
+
+    }
+
+    func search(searchText: String) -> [ReminderList] {
+        filteredReminderLists = reminderLists.filter {
+            let reminderListArray = $0.reminders
+            for reminderList in reminderListArray {
+                if reminderList.notes.contains(searchText) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        return filteredReminderLists
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,6 +122,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate, NewReminderProtoco
         case Constant.reminderListSegueID:
             let reminderListVC = segue.destination as? ReminderListVC
             let list = sender as? ListInfo
+            reminderListVC?.delegate = self
             reminderListVC?.title = list?.name
             reminderListVC?.reminderList = list?.reminderList ?? []
             reminderListVC?.listColor = list?.color

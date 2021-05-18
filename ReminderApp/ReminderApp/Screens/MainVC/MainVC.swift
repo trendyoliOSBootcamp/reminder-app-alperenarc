@@ -21,12 +21,13 @@ extension MainVC {
         static let allListName = "All"
         static let flaggedListName = "Flagged"
         static let flagIcon = "flag.circle.fill"
+        static let storyBoardName = "Main"
+        static let searchVCID = "SearchResultVCID"
     }
 }
 
-final class MainVC: UIViewController {
+final class MainVC: UIViewController, UISearchControllerDelegate {
 
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var allSection: UIView!
     @IBOutlet weak var flaggedSection: UIView!
     @IBOutlet weak var myListTableView: UITableView!
@@ -34,30 +35,42 @@ final class MainVC: UIViewController {
     @IBOutlet weak var flaggedCountLabel: UILabel!
 
     var reminderLists: [ReminderList] = [
-        ReminderList(name: "Reminder", icon: "flag.circle.fill", iconColor: .orange, reminders: [Reminder(title: "Denem", notes: "Not Bölümü", listName: "Reminder", isFlag: true, priority: .High)])]
+        ReminderList(name: "Reminder", icon: "flag.circle.fill", iconColor: .orange, reminders: [Reminder(title: "Deneme", notes: "Not Bölümü", listName: "Reminder", isFlag: true, priority: .High),
+            Reminder(title: "Other Reminder", notes: "Not alacağım", listName: "Reminder", isFlag: true, priority: .Low)]),
+        ReminderList(name: "Other List", icon: "circle", iconColor: .red, reminders: [Reminder(title: "Other ", notes: "Not al", listName: "Other List", isFlag: true, priority: .High)])
+
+    ]
+
+    lazy var storyboardInstance = UIStoryboard(name: Constant.storyBoardName, bundle: .main)
+    lazy var searchResultViewController = storyboardInstance.instantiateViewController(identifier: Constant.searchVCID) as! SearchResultVC
+    lazy var searchController = UISearchController(searchResultsController: searchResultViewController)
+
+    var filteredReminderLists: [ReminderList] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUISettings()
         addRecognizerForSection()
-        allCountLabel.text = "\(filterAllList().count)"
-        flaggedCountLabel.text = "\(filterFlaggedList().count)"
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     func setUISettings() {
         allSection.layer.cornerRadius = Constant.cornerRadius
         flaggedSection.layer.cornerRadius = Constant.cornerRadius
         myListTableView.layer.cornerRadius = Constant.cornerRadius
+        allCountLabel.text = "\(filterAllList().count)"
+        flaggedCountLabel.text = "\(filterFlaggedList().count)"
+
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
     }
 
     func addRecognizerForSection() {

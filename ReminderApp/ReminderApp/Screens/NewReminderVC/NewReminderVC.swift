@@ -44,7 +44,7 @@ final class NewReminderVC: UIViewController, ShowAlert {
 
     var reminderPriorityDelegate = ReminderPriorityDelegate()
     lazy var reminderListDelegate = ReminderListDelegate(reminderLists: reminderLists ?? [])
-    var delegate: NewReminderProtocol?
+    var delegate: ReminderProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()

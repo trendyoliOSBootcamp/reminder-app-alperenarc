@@ -7,6 +7,9 @@
 
 import Foundation
 
-protocol NewReminderProtocol {
+protocol ReminderProtocol {
     func createNewReminder(reminder:Reminder)
+    func deleteReminder(reminder: Reminder)
+    func switchFlagStatus(reminder:Reminder)
+    func addList(reminderList: ReminderList)
 }

@@ -25,7 +25,7 @@ extension AddListVC {
 
 final class AddListVC: UIViewController, ShowAlert {
 
-    var delegate: AddListProtocol?
+    var delegate: ReminderProtocol?
     var reminderLists: [ReminderList] = []
     var selectedColor: UIColor = Constant.colors[4]
     var selectedIcon: String = Constant.icons[1]
