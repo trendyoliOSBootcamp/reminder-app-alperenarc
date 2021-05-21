@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IconCellCollectionViewCell: UICollectionViewCell {
+final class IconCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImage: UIImageView!
 
     override func layoutSubviews() {

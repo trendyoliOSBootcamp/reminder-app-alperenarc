@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reminder: Equatable {
+struct Reminder: Equatable, Codable {
     var title: String
     var notes: String
     var listName: String
@@ -23,7 +23,7 @@ struct Reminder: Equatable {
     }
 }
 
-enum Priority: String, CaseIterable {
+enum Priority: String, CaseIterable, Codable {
     case None = "None"
     case Normal = "Normal"
     case Low = "Low"

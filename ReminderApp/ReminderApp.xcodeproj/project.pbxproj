@@ -15,27 +15,22 @@
 		051549F8264D560400D534D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051549F7264D560400D534D1 /* Main.storyboard */; };
 		051549FB264D610300D534D1 /* UITableView+EmptyListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051549FA264D610300D534D1 /* UITableView+EmptyListMessage.swift */; };
 		051549FE264D69F900D534D1 /* NewReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051549FD264D69F900D534D1 /* NewReminderVC.swift */; };
-		05154A00264D6D1700D534D1 /* MainVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051549FF264D6D1700D534D1 /* MainVCExtensions.swift */; };
 		05154A03264D6EC100D534D1 /* MyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A01264D6EC100D534D1 /* MyListTableViewCell.swift */; };
-		05154A08264D798C00D534D1 /* ReminderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A07264D798C00D534D1 /* ReminderProtocol.swift */; };
+		05154A08264D798C00D534D1 /* ReminderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A07264D798C00D534D1 /* ReminderDelegate.swift */; };
 		05154A0A264D7E2B00D534D1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A09264D7E2B00D534D1 /* Reminder.swift */; };
 		05154A0C264D7ED900D534D1 /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A0B264D7ED900D534D1 /* ReminderList.swift */; };
 		05154A0F264D9B6B00D534D1 /* ReminderPriorityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05154A0E264D9B6B00D534D1 /* ReminderPriorityDelegate.swift */; };
 		051EF8512652676C005A6D4C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EF8502652676C005A6D4C /* SearchTableViewCell.swift */; };
-		051EF853265267BF005A6D4C /* SearchResultVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EF852265267BF005A6D4C /* SearchResultVCExtensions.swift */; };
-		051EF8572652BA7B005A6D4C /* ReminderOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EF8562652BA7B005A6D4C /* ReminderOperationProtocol.swift */; };
-		0545ECBB264FD7B30012AF0E /* ReminderListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545ECBA264FD7B30012AF0E /* ReminderListVCExtensions.swift */; };
+		051EF8572652BA7B005A6D4C /* ReminderOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EF8562652BA7B005A6D4C /* ReminderOperationDelegate.swift */; };
 		05AC896726515A0300828770 /* IsTableViewEmptyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC896626515A0300828770 /* IsTableViewEmptyProtocol.swift */; };
 		05AC896A2651815900828770 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC89692651815900828770 /* SearchResultVC.swift */; };
 		05D4C58F264EAB2500124280 /* ReminderListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C58E264EAB2500124280 /* ReminderListDelegate.swift */; };
 		05D4C591264EBA8000124280 /* ShowAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C590264EBA8000124280 /* ShowAlertProtocol.swift */; };
-		05D4C593264ED68900124280 /* UITextView+CenterVertically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C592264ED68900124280 /* UITextView+CenterVertically.swift */; };
-		05D4C595264ED7A300124280 /* NewReminderVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C594264ED7A300124280 /* NewReminderVCExtensions.swift */; };
+		05D4C593264ED68900124280 /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C592264ED68900124280 /* UITextField+Style.swift */; };
 		05D4C598264EEB6000124280 /* ReminderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C597264EEB6000124280 /* ReminderListVC.swift */; };
 		05D4C5BA264F01F100124280 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4C5B9264F01F100124280 /* ReminderCell.swift */; };
 		05DB68F92650002400D8212E /* AddListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68F82650002400D8212E /* AddListVC.swift */; };
 		05DB68FD26501C7400D8212E /* IconCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */; };
-		05DB68FF26501D0100D8212E /* AddListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,27 +44,22 @@
 		051549F7264D560400D534D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		051549FA264D610300D534D1 /* UITableView+EmptyListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyListMessage.swift"; sourceTree = "<group>"; };
 		051549FD264D69F900D534D1 /* NewReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderVC.swift; sourceTree = "<group>"; };
-		051549FF264D6D1700D534D1 /* MainVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCExtensions.swift; sourceTree = "<group>"; };
 		05154A01264D6EC100D534D1 /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
-		05154A07264D798C00D534D1 /* ReminderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProtocol.swift; sourceTree = "<group>"; };
+		05154A07264D798C00D534D1 /* ReminderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDelegate.swift; sourceTree = "<group>"; };
 		05154A09264D7E2B00D534D1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		05154A0B264D7ED900D534D1 /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
 		05154A0E264D9B6B00D534D1 /* ReminderPriorityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPriorityDelegate.swift; sourceTree = "<group>"; };
 		051EF8502652676C005A6D4C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		051EF852265267BF005A6D4C /* SearchResultVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVCExtensions.swift; sourceTree = "<group>"; };
-		051EF8562652BA7B005A6D4C /* ReminderOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderOperationProtocol.swift; sourceTree = "<group>"; };
-		0545ECBA264FD7B30012AF0E /* ReminderListVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListVCExtensions.swift; sourceTree = "<group>"; };
+		051EF8562652BA7B005A6D4C /* ReminderOperationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderOperationDelegate.swift; sourceTree = "<group>"; };
 		05AC896626515A0300828770 /* IsTableViewEmptyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsTableViewEmptyProtocol.swift; sourceTree = "<group>"; };
 		05AC89692651815900828770 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		05D4C58E264EAB2500124280 /* ReminderListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListDelegate.swift; sourceTree = "<group>"; };
 		05D4C590264EBA8000124280 /* ShowAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertProtocol.swift; sourceTree = "<group>"; };
-		05D4C592264ED68900124280 /* UITextView+CenterVertically.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+CenterVertically.swift"; sourceTree = "<group>"; };
-		05D4C594264ED7A300124280 /* NewReminderVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderVCExtensions.swift; sourceTree = "<group>"; };
+		05D4C592264ED68900124280 /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
 		05D4C597264EEB6000124280 /* ReminderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListVC.swift; sourceTree = "<group>"; };
 		05D4C5B9264F01F100124280 /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		05DB68F82650002400D8212E /* AddListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListVC.swift; sourceTree = "<group>"; };
 		05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCellCollectionViewCell.swift; sourceTree = "<group>"; };
-		05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListVCExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				051549E0264D494600D534D1 /* MainVC.swift */,
-				051549FF264D6D1700D534D1 /* MainVCExtensions.swift */,
 				05154A01264D6EC100D534D1 /* MyListTableViewCell.swift */,
 			);
 			path = MainVC;
@@ -160,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				051549FA264D610300D534D1 /* UITableView+EmptyListMessage.swift */,
-				05D4C592264ED68900124280 /* UITextView+CenterVertically.swift */,
+				05D4C592264ED68900124280 /* UITextField+Style.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				051549FD264D69F900D534D1 /* NewReminderVC.swift */,
-				05D4C594264ED7A300124280 /* NewReminderVCExtensions.swift */,
 			);
 			path = NewReminderVC;
 			sourceTree = "<group>";
@@ -177,10 +165,8 @@
 		05154A05264D796F00D534D1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				05154A07264D798C00D534D1 /* ReminderProtocol.swift */,
 				05D4C590264EBA8000124280 /* ShowAlertProtocol.swift */,
 				05AC896626515A0300828770 /* IsTableViewEmptyProtocol.swift */,
-				051EF8562652BA7B005A6D4C /* ReminderOperationProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -190,6 +176,8 @@
 			children = (
 				05154A0E264D9B6B00D534D1 /* ReminderPriorityDelegate.swift */,
 				05D4C58E264EAB2500124280 /* ReminderListDelegate.swift */,
+				05154A07264D798C00D534D1 /* ReminderDelegate.swift */,
+				051EF8562652BA7B005A6D4C /* ReminderOperationDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -199,7 +187,6 @@
 			children = (
 				05AC89692651815900828770 /* SearchResultVC.swift */,
 				051EF8502652676C005A6D4C /* SearchTableViewCell.swift */,
-				051EF852265267BF005A6D4C /* SearchResultVCExtensions.swift */,
 			);
 			path = SearchResultVC;
 			sourceTree = "<group>";
@@ -208,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				05D4C597264EEB6000124280 /* ReminderListVC.swift */,
-				0545ECBA264FD7B30012AF0E /* ReminderListVCExtensions.swift */,
 				05D4C5B9264F01F100124280 /* ReminderCell.swift */,
 			);
 			path = ReminderListVC;
@@ -219,7 +205,6 @@
 			children = (
 				05DB68F82650002400D8212E /* AddListVC.swift */,
 				05DB68FC26501C7400D8212E /* IconCellCollectionViewCell.swift */,
-				05DB68FE26501D0100D8212E /* AddListVCExtensions.swift */,
 			);
 			path = AddListVC;
 			sourceTree = "<group>";
@@ -295,9 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05D4C5BA264F01F100124280 /* ReminderCell.swift in Sources */,
-				051EF8572652BA7B005A6D4C /* ReminderOperationProtocol.swift in Sources */,
-				05D4C595264ED7A300124280 /* NewReminderVCExtensions.swift in Sources */,
-				0545ECBB264FD7B30012AF0E /* ReminderListVCExtensions.swift in Sources */,
+				051EF8572652BA7B005A6D4C /* ReminderOperationDelegate.swift in Sources */,
 				05154A03264D6EC100D534D1 /* MyListTableViewCell.swift in Sources */,
 				051549FE264D69F900D534D1 /* NewReminderVC.swift in Sources */,
 				051549E1264D494600D534D1 /* MainVC.swift in Sources */,
@@ -305,16 +288,13 @@
 				05154A0F264D9B6B00D534D1 /* ReminderPriorityDelegate.swift in Sources */,
 				05154A0C264D7ED900D534D1 /* ReminderList.swift in Sources */,
 				051549FB264D610300D534D1 /* UITableView+EmptyListMessage.swift in Sources */,
-				05154A00264D6D1700D534D1 /* MainVCExtensions.swift in Sources */,
-				05D4C593264ED68900124280 /* UITextView+CenterVertically.swift in Sources */,
+				05D4C593264ED68900124280 /* UITextField+Style.swift in Sources */,
 				051549DD264D494600D534D1 /* AppDelegate.swift in Sources */,
 				05D4C598264EEB6000124280 /* ReminderListVC.swift in Sources */,
 				05AC896A2651815900828770 /* SearchResultVC.swift in Sources */,
-				05DB68FF26501D0100D8212E /* AddListVCExtensions.swift in Sources */,
 				05D4C591264EBA8000124280 /* ShowAlertProtocol.swift in Sources */,
-				051EF853265267BF005A6D4C /* SearchResultVCExtensions.swift in Sources */,
 				05154A0A264D7E2B00D534D1 /* Reminder.swift in Sources */,
-				05154A08264D798C00D534D1 /* ReminderProtocol.swift in Sources */,
+				05154A08264D798C00D534D1 /* ReminderDelegate.swift in Sources */,
 				05D4C58F264EAB2500124280 /* ReminderListDelegate.swift in Sources */,
 				05AC896726515A0300828770 /* IsTableViewEmptyProtocol.swift in Sources */,
 				051EF8512652676C005A6D4C /* SearchTableViewCell.swift in Sources */,

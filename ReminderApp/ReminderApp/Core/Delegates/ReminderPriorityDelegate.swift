@@ -8,11 +8,7 @@
 import UIKit
 
 final class ReminderPriorityDelegate: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
-    var selectedPriority: Priority
-
-    override init() {
-        selectedPriority = .None
-    }
+    var selectedPriority: Priority = .None
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

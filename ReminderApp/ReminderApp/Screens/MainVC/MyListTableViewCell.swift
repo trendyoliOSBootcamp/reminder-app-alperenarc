@@ -14,10 +14,8 @@ final class MyListTableViewCell: UITableViewCell {
     @IBOutlet weak var reminderListCount: UILabel!
 
     func configure(icon: String, name: String, count: Int, color: UIColor) {
-
         reminderListIcon.image  = UIImage(systemName: icon)
         reminderListIcon.tintColor = color
-                
         reminderListName.text = name
         reminderListCount.text = String(count)
     }

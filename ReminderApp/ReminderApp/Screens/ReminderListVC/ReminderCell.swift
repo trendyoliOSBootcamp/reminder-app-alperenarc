@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReminderCell: UITableViewCell {
+final class ReminderCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var exclamationLbl: UILabel!

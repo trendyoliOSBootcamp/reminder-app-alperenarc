@@ -6,14 +6,15 @@
 //
 
 import UIKit
-protocol ReminderOperationProtocol {
-    func switchFlagStatus(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderProtocol?)
-    func deleteReminder(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderProtocol?)
+
+protocol ReminderOperationDelegate {
+    func switchFlagStatus(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderDelegate?)
+    func deleteReminder(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderDelegate?)
     func priorityExclamationString(priority: Priority) -> String
 }
 
-extension ReminderOperationProtocol {
-    func switchFlagStatus(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderProtocol?) {
+extension ReminderOperationDelegate {
+    func switchFlagStatus(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderDelegate?) {
         delegate?.switchFlagStatus(reminder: allReminders[indexPath.row])
         for reminderItem in allReminders {
             if reminderItem == allReminders[indexPath.row] {
@@ -25,7 +26,7 @@ extension ReminderOperationProtocol {
         }
     }
 
-    func deleteReminder(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderProtocol?) {
+    func deleteReminder(indexPath: IndexPath, allReminders: inout [Reminder], delegate: ReminderDelegate?) {
         delegate?.deleteReminder(reminder: allReminders[indexPath.row])
         for reminderItem in allReminders {
             if reminderItem == allReminders[indexPath.row] {
